@@ -1,0 +1,640 @@
+=== PYTHON EXPERIMENTS ===
+[Python] Building bad Dockerfile...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  22.53kB
+Step 1/5 : FROM python:3.13-bookworm
+ ---> bad39b148919
+Step 2/5 : WORKDIR /app
+ ---> Using cache
+ ---> 28b38797d735
+Step 3/5 : COPY . /app
+ ---> Using cache
+ ---> 31e040141202
+Step 4/5 : RUN pip install -r requirements/backend.in
+ ---> Running in 041017cbdc4e
+Collecting fastapi (from -r requirements/backend.in (line 1))
+  Downloading fastapi-0.136.1-py3-none-any.whl.metadata (28 kB)
+Collecting pydantic>=2.0 (from -r requirements/backend.in (line 2))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting pydantic-settings (from -r requirements/backend.in (line 3))
+  Downloading pydantic_settings-2.14.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting starlette (from -r requirements/backend.in (line 4))
+  Downloading starlette-1.0.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting numpy (from -r requirements/backend.in (line 6))
+  Downloading numpy-2.4.5-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (6.6 kB)
+Collecting uvicorn[standard] (from -r requirements/backend.in (line 5))
+  Downloading uvicorn-0.47.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.6 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings->-r requirements/backend.in (line 3))
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting anyio<5,>=3.6.2 (from starlette->-r requirements/backend.in (line 4))
+  Downloading anyio-4.13.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette->-r requirements/backend.in (line 4))
+  Downloading idna-3.15-py3-none-any.whl.metadata (7.7 kB)
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading click-8.3.3-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (3.5 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.9 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (6.8 kB)
+Downloading fastapi-0.136.1-py3-none-any.whl (117 kB)
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 2.3 MB/s  0:00:00
+Downloading pydantic_settings-2.14.1-py3-none-any.whl (60 kB)
+Downloading starlette-1.0.0-py3-none-any.whl (72 kB)
+Downloading anyio-4.13.0-py3-none-any.whl (114 kB)
+Downloading uvicorn-0.47.0-py3-none-any.whl (71 kB)
+Downloading numpy-2.4.5-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 2.9 MB/s  0:00:05
+Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading click-8.3.3-py3-none-any.whl (110 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (473 kB)
+Downloading idna-3.15-py3-none-any.whl (72 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (767 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.1/767.1 kB 4.0 MB/s  0:00:00
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 3.3 MB/s  0:00:01
+Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (449 kB)
+Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (186 kB)
+Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-dotenv, numpy, idna, httptools, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, anyio, watchfiles, starlette, pydantic, pydantic-settings, fastapi
+
+Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 click-8.3.3 fastapi-0.136.1 h11-0.16.0 httptools-0.7.1 idna-3.15 numpy-2.4.5 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.1 python-dotenv-1.2.2 pyyaml-6.0.3 starlette-1.0.0 typing-extensions-4.15.0 typing-inspection-0.4.2 uvicorn-0.47.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[0m[91m
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 041017cbdc4e
+ ---> c76720cc10f8
+Step 5/5 : CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
+ ---> Running in da58bcb224cb
+ ---> Removed intermediate container da58bcb224cb
+ ---> 2c277da407fd
+Successfully built 2c277da407fd
+Successfully tagged py-bad:latest
+real 24.47
+user 0.01
+sys 0.05
+Image size py-bad:
+1.68GB
+[Python] Modifying code and rebuilding bad Dockerfile...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  22.53kB
+Step 1/5 : FROM python:3.13-bookworm
+ ---> bad39b148919
+Step 2/5 : WORKDIR /app
+ ---> Using cache
+ ---> 28b38797d735
+Step 3/5 : COPY . /app
+ ---> cb7c392394b9
+Step 4/5 : RUN pip install -r requirements/backend.in
+ ---> Running in 686d73b0b5ca
+Collecting fastapi (from -r requirements/backend.in (line 1))
+  Downloading fastapi-0.136.1-py3-none-any.whl.metadata (28 kB)
+Collecting pydantic>=2.0 (from -r requirements/backend.in (line 2))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting pydantic-settings (from -r requirements/backend.in (line 3))
+  Downloading pydantic_settings-2.14.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting starlette (from -r requirements/backend.in (line 4))
+  Downloading starlette-1.0.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting numpy (from -r requirements/backend.in (line 6))
+  Downloading numpy-2.4.5-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (6.6 kB)
+Collecting uvicorn[standard] (from -r requirements/backend.in (line 5))
+  Downloading uvicorn-0.47.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.6 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings->-r requirements/backend.in (line 3))
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting anyio<5,>=3.6.2 (from starlette->-r requirements/backend.in (line 4))
+  Downloading anyio-4.13.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette->-r requirements/backend.in (line 4))
+  Downloading idna-3.15-py3-none-any.whl.metadata (7.7 kB)
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading click-8.3.3-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (3.5 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.9 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (6.8 kB)
+Downloading fastapi-0.136.1-py3-none-any.whl (117 kB)
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 6.5 MB/s  0:00:00
+Downloading pydantic_settings-2.14.1-py3-none-any.whl (60 kB)
+Downloading starlette-1.0.0-py3-none-any.whl (72 kB)
+Downloading anyio-4.13.0-py3-none-any.whl (114 kB)
+Downloading uvicorn-0.47.0-py3-none-any.whl (71 kB)
+Downloading numpy-2.4.5-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 6.3 MB/s  0:00:02
+Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading click-8.3.3-py3-none-any.whl (110 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (473 kB)
+Downloading idna-3.15-py3-none-any.whl (72 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (767 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.1/767.1 kB 7.0 MB/s  0:00:00
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 5.7 MB/s  0:00:00
+Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (449 kB)
+Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (186 kB)
+Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-dotenv, numpy, idna, httptools, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, anyio, watchfiles, starlette, pydantic, pydantic-settings, fastapi
+
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[0mSuccessfully installed annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 click-8.3.3 fastapi-0.136.1 h11-0.16.0 httptools-0.7.1 idna-3.15 numpy-2.4.5 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.1 python-dotenv-1.2.2 pyyaml-6.0.3 starlette-1.0.0 typing-extensions-4.15.0 typing-inspection-0.4.2 uvicorn-0.47.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0
+[91m
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 686d73b0b5ca
+ ---> 79a828cbeab3
+Step 5/5 : CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
+ ---> Running in f39961bde0ef
+ ---> Removed intermediate container f39961bde0ef
+ ---> 00627790a778
+Successfully built 00627790a778
+Successfully tagged py-bad-mod:latest
+real 19.17
+user 0.01
+sys 0.01
+Image size py-bad-mod:
+1.68GB
+[Python] Building good Dockerfile...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon   21.5kB
+Step 1/6 : FROM python:3.13-bookworm
+ ---> bad39b148919
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 28b38797d735
+Step 3/6 : COPY requirements/ /app/requirements/
+ ---> Using cache
+ ---> 765d774f5e9b
+Step 4/6 : RUN pip install -r requirements/backend.in
+ ---> Using cache
+ ---> bfbafee90f3f
+Step 5/6 : COPY . /app
+ ---> 79c86d2b83b9
+Step 6/6 : CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
+ ---> Running in 4d7301950747
+ ---> Removed intermediate container 4d7301950747
+ ---> 6139bff05f3e
+Successfully built 6139bff05f3e
+Successfully tagged py-good:latest
+real 2.49
+user 0.00
+sys 0.00
+Image size py-good:
+1.68GB
+[Python] Modifying code and rebuilding good Dockerfile...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  22.53kB
+Step 1/6 : FROM python:3.13-bookworm
+ ---> bad39b148919
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 28b38797d735
+Step 3/6 : COPY requirements/ /app/requirements/
+ ---> Using cache
+ ---> 765d774f5e9b
+Step 4/6 : RUN pip install -r requirements/backend.in
+ ---> Using cache
+ ---> bfbafee90f3f
+Step 5/6 : COPY . /app
+ ---> 0383d00bbd84
+Step 6/6 : CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
+ ---> Running in 24e9f4f1d595
+ ---> Removed intermediate container 24e9f4f1d595
+ ---> e7e711ba3582
+Successfully built e7e711ba3582
+Successfully tagged py-good-mod:latest
+real 1.79
+user 0.00
+sys 0.00
+Image size py-good-mod:
+1.68GB
+[Python] Building Alpine Dockerfile...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon   21.5kB
+Step 1/6 : FROM python:3.13-alpine
+ ---> 420cd0bf0f39
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> ea98286b0854
+Step 3/6 : COPY requirements/ /app/requirements/
+ ---> Using cache
+ ---> 9976f85e358a
+Step 4/6 : RUN pip install -r requirements/backend.in
+ ---> Using cache
+ ---> 4ff043e7b839
+Step 5/6 : COPY . /app
+ ---> a99202bfa8ac
+Step 6/6 : CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
+ ---> Running in f3723cbcae41
+ ---> Removed intermediate container f3723cbcae41
+ ---> f57949657506
+Successfully built f57949657506
+Successfully tagged py-alpine:latest
+real 1.03
+user 0.00
+sys 0.00
+Image size py-alpine:
+292MB
+[Python] Building Debian Numpy...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  22.02kB
+Step 1/6 : FROM python:3.13-bookworm
+ ---> bad39b148919
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 28b38797d735
+Step 3/6 : COPY requirements/ /app/requirements/
+ ---> 167c624bcf74
+Step 4/6 : RUN pip install -r requirements/backend.in
+ ---> Running in f7b86ad238f7
+Collecting fastapi (from -r requirements/backend.in (line 1))
+  Downloading fastapi-0.136.1-py3-none-any.whl.metadata (28 kB)
+Collecting pydantic>=2.0 (from -r requirements/backend.in (line 2))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting pydantic-settings (from -r requirements/backend.in (line 3))
+  Downloading pydantic_settings-2.14.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting starlette (from -r requirements/backend.in (line 4))
+  Downloading starlette-1.0.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting numpy (from -r requirements/backend.in (line 6))
+  Downloading numpy-2.4.5-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (6.6 kB)
+Collecting uvicorn[standard] (from -r requirements/backend.in (line 5))
+  Downloading uvicorn-0.47.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.6 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings->-r requirements/backend.in (line 3))
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting anyio<5,>=3.6.2 (from starlette->-r requirements/backend.in (line 4))
+  Downloading anyio-4.13.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette->-r requirements/backend.in (line 4))
+  Downloading idna-3.15-py3-none-any.whl.metadata (7.7 kB)
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading click-8.3.3-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (3.5 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.9 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (6.8 kB)
+Downloading fastapi-0.136.1-py3-none-any.whl (117 kB)
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 4.9 MB/s  0:00:00
+Downloading pydantic_settings-2.14.1-py3-none-any.whl (60 kB)
+Downloading starlette-1.0.0-py3-none-any.whl (72 kB)
+Downloading anyio-4.13.0-py3-none-any.whl (114 kB)
+Downloading uvicorn-0.47.0-py3-none-any.whl (71 kB)
+Downloading numpy-2.4.5-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 4.4 MB/s  0:00:03
+Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading click-8.3.3-py3-none-any.whl (110 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (473 kB)
+Downloading idna-3.15-py3-none-any.whl (72 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (767 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.1/767.1 kB 6.5 MB/s  0:00:00
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 3.9 MB/s  0:00:01
+Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (449 kB)
+Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (186 kB)
+Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-dotenv, numpy, idna, httptools, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, anyio, watchfiles, starlette, pydantic, pydantic-settings, fastapi
+
+Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 click-8.3.3 fastapi-0.136.1 h11-0.16.0 httptools-0.7.1 idna-3.15 numpy-2.4.5 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.1 python-dotenv-1.2.2 pyyaml-6.0.3 starlette-1.0.0 typing-extensions-4.15.0 typing-inspection-0.4.2 uvicorn-0.47.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[0m[91m
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container f7b86ad238f7
+ ---> d3bb8792db56
+Step 5/6 : COPY . /app
+ ---> ced98a947347
+Step 6/6 : CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
+ ---> Running in daf54be06c22
+ ---> Removed intermediate container daf54be06c22
+ ---> 92d6aaf815a4
+Successfully built 92d6aaf815a4
+Successfully tagged py-numpy-debian:latest
+real 23.96
+user 0.01
+sys 0.01
+Image size py-numpy-debian:
+1.68GB
+[Python] Building Alpine Numpy...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  22.02kB
+Step 1/6 : FROM python:3.13-alpine
+ ---> 420cd0bf0f39
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> ea98286b0854
+Step 3/6 : COPY requirements/ /app/requirements/
+ ---> 856a872f4534
+Step 4/6 : RUN pip install -r requirements/backend.in
+ ---> Running in ea4655dc6d7a
+Collecting fastapi (from -r requirements/backend.in (line 1))
+  Downloading fastapi-0.136.1-py3-none-any.whl.metadata (28 kB)
+Collecting pydantic>=2.0 (from -r requirements/backend.in (line 2))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting pydantic-settings (from -r requirements/backend.in (line 3))
+  Downloading pydantic_settings-2.14.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting starlette (from -r requirements/backend.in (line 4))
+  Downloading starlette-1.0.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting numpy (from -r requirements/backend.in (line 6))
+  Downloading numpy-2.4.5-cp313-cp313-musllinux_1_2_aarch64.whl.metadata (6.6 kB)
+Collecting uvicorn[standard] (from -r requirements/backend.in (line 5))
+  Downloading uvicorn-0.47.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements/backend.in (line 1))
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2.0->-r requirements/backend.in (line 2))
+  Downloading pydantic_core-2.46.4-cp313-cp313-musllinux_1_1_aarch64.whl.metadata (6.6 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings->-r requirements/backend.in (line 3))
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting anyio<5,>=3.6.2 (from starlette->-r requirements/backend.in (line 4))
+  Downloading anyio-4.13.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette->-r requirements/backend.in (line 4))
+  Downloading idna-3.15-py3-none-any.whl.metadata (7.7 kB)
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading click-8.3.3-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading httptools-0.7.1-cp313-cp313-musllinux_1_2_aarch64.whl.metadata (3.5 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading pyyaml-6.0.3-cp313-cp313-musllinux_1_2_aarch64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading uvloop-0.22.1-cp313-cp313-musllinux_1_2_aarch64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading watchfiles-1.1.1-cp313-cp313-musllinux_1_1_aarch64.whl.metadata (4.9 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements/backend.in (line 5))
+  Downloading websockets-16.0-cp313-cp313-musllinux_1_2_aarch64.whl.metadata (6.8 kB)
+Downloading fastapi-0.136.1-py3-none-any.whl (117 kB)
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.4-cp313-cp313-musllinux_1_1_aarch64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 2.8 MB/s  0:00:00
+Downloading pydantic_settings-2.14.1-py3-none-any.whl (60 kB)
+Downloading starlette-1.0.0-py3-none-any.whl (72 kB)
+Downloading anyio-4.13.0-py3-none-any.whl (114 kB)
+Downloading uvicorn-0.47.0-py3-none-any.whl (71 kB)
+Downloading numpy-2.4.5-cp313-cp313-musllinux_1_2_aarch64.whl (17.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.0/17.0 MB 3.0 MB/s  0:00:05
+Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading click-8.3.3-py3-none-any.whl (110 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.7.1-cp313-cp313-musllinux_1_2_aarch64.whl (455 kB)
+Downloading idna-3.15-py3-none-any.whl (72 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pyyaml-6.0.3-cp313-cp313-musllinux_1_2_aarch64.whl (753 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 753.6/753.6 kB 4.3 MB/s  0:00:00
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading uvloop-0.22.1-cp313-cp313-musllinux_1_2_aarch64.whl (4.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 3.5 MB/s  0:00:01
+Downloading watchfiles-1.1.1-cp313-cp313-musllinux_1_1_aarch64.whl (630 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 630.0/630.0 kB 3.3 MB/s  0:00:00
+Downloading websockets-16.0-cp313-cp313-musllinux_1_2_aarch64.whl (185 kB)
+Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-dotenv, numpy, idna, httptools, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, anyio, watchfiles, starlette, pydantic, pydantic-settings, fastapi
+
+Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 click-8.3.3 fastapi-0.136.1 h11-0.16.0 httptools-0.7.1 idna-3.15 numpy-2.4.5 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.1 python-dotenv-1.2.2 pyyaml-6.0.3 starlette-1.0.0 typing-extensions-4.15.0 typing-inspection-0.4.2 uvicorn-0.47.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[0m[91m
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container ea4655dc6d7a
+ ---> 536282283ae1
+Step 5/6 : COPY . /app
+ ---> 6d66c1bc5f80
+Step 6/6 : CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
+ ---> Running in 84b5d3b335b9
+ ---> Removed intermediate container 84b5d3b335b9
+ ---> 922f5d4d835f
+Successfully built 922f5d4d835f
+Successfully tagged py-numpy-alpine:latest
+real 23.68
+user 0.01
+sys 0.01
+Image size py-numpy-alpine:
+292MB
+=== GOLANG EXPERIMENTS ===
+[Golang] Building Basic...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  95.74kB
+Step 1/7 : FROM golang:1.22
+ ---> 1cf6c45ba39d
+Step 2/7 : WORKDIR /app
+ ---> Using cache
+ ---> c653ed5b2383
+Step 3/7 : COPY go.mod go.sum ./
+ ---> Using cache
+ ---> 55bf56f05bd5
+Step 4/7 : RUN go mod download
+ ---> Using cache
+ ---> ab10fae7f338
+Step 5/7 : COPY . ./
+ ---> Using cache
+ ---> e3d4475cd489
+Step 6/7 : RUN go build -o main .
+ ---> Using cache
+ ---> 587645ea24b4
+Step 7/7 : CMD ["./main"]
+ ---> Using cache
+ ---> 1250caea154d
+Successfully built 1250caea154d
+Successfully tagged go-basic:latest
+
+real	0m0.057s
+user	0m0.006s
+sys	0m0.005s
+Image size go-basic:
+1.33GB
+[Golang] Building Scratch...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  95.74kB
+Step 1/11 : FROM golang:1.22 AS builder
+ ---> 1cf6c45ba39d
+Step 2/11 : WORKDIR /app
+ ---> Using cache
+ ---> c653ed5b2383
+Step 3/11 : COPY go.mod go.sum ./
+ ---> Using cache
+ ---> 55bf56f05bd5
+Step 4/11 : RUN go mod download
+ ---> Using cache
+ ---> ab10fae7f338
+Step 5/11 : COPY . ./
+ ---> Using cache
+ ---> e3d4475cd489
+Step 6/11 : RUN CGO_ENABLED=0 GOOS=linux go build -o main .
+ ---> Using cache
+ ---> bef2a0cda2fd
+Step 7/11 : FROM scratch
+ ---> 
+Step 8/11 : WORKDIR /app
+ ---> Using cache
+ ---> 51ebe7893e95
+Step 9/11 : COPY --from=builder /app/main .
+ ---> Using cache
+ ---> 1306cddc8c6a
+Step 10/11 : COPY --from=builder /app/templates ./templates
+ ---> Using cache
+ ---> f240a876cce0
+Step 11/11 : CMD ["./main"]
+ ---> Using cache
+ ---> 1ef1d68ff4d9
+Successfully built 1ef1d68ff4d9
+Successfully tagged go-scratch:latest
+
+real	0m0.075s
+user	0m0.005s
+sys	0m0.005s
+Image size go-scratch:
+16MB
+[Golang] Building Distroless...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  95.74kB
+Step 1/11 : FROM golang:1.22 AS builder
+ ---> 1cf6c45ba39d
+Step 2/11 : WORKDIR /app
+ ---> Using cache
+ ---> c653ed5b2383
+Step 3/11 : COPY go.mod go.sum ./
+ ---> Using cache
+ ---> 55bf56f05bd5
+Step 4/11 : RUN go mod download
+ ---> Using cache
+ ---> ab10fae7f338
+Step 5/11 : COPY . ./
+ ---> Using cache
+ ---> e3d4475cd489
+Step 6/11 : RUN GOOS=linux go build -o main .
+ ---> Using cache
+ ---> 0ea9ecb5f83f
+Step 7/11 : FROM gcr.io/distroless/base-debian12
+ ---> 9dce90e688a5
+Step 8/11 : WORKDIR /app
+ ---> Using cache
+ ---> 92e3a9706334
+Step 9/11 : COPY --from=builder /app/main .
+ ---> Using cache
+ ---> 742ed5e97306
+Step 10/11 : COPY --from=builder /app/templates ./templates
+ ---> Using cache
+ ---> d796e9b5859e
+Step 11/11 : CMD ["./main"]
+ ---> Using cache
+ ---> 5fc34631a7e1
+Successfully built 5fc34631a7e1
+Successfully tagged go-distroless:latest
+
+real	0m0.168s
+user	0m0.010s
+sys	0m0.006s
+Image size go-distroless:
+59.5MB
+=== DNS EXPERIMENTS ===
+4804b1f1c797d157ac9d75326849c817789386d295f1d297eabcf244c0a2431f
+74a4f7a4dfb64e82c9837cf5a76936aa85f4f9f7f70d704bab2a8fc39ea98da8
+Resolving from Ubuntu...
+10.0.0.50       myservice.internal.corp
+Resolving from Alpine...
+Alpine failed
+dns-server
+dns-lab
+=== ALL DONE ===

@@ -6,14 +6,14 @@ cd python-app
 
 # 1. Bad Dockerfile
 echo "[Python] Building bad Dockerfile..."
-time docker build -t py-bad -f Dockerfile.bad .
+/usr/bin/time -p docker build -t py-bad -f Dockerfile.bad .
 echo "Image size py-bad:"
 docker images py-bad --format "{{.Size}}"
 
 # 2. Modify code and rebuild bad Dockerfile
 echo "[Python] Modifying code and rebuilding bad Dockerfile..."
 sed -i.bak 's/msg/message/g' spaceship/routers/api.py
-time docker build -t py-bad-mod -f Dockerfile.bad .
+/usr/bin/time -p docker build -t py-bad-mod -f Dockerfile.bad .
 echo "Image size py-bad-mod:"
 docker images py-bad-mod --format "{{.Size}}"
 # Revert
@@ -21,14 +21,14 @@ mv spaceship/routers/api.py.bak spaceship/routers/api.py
 
 # 3. Good Dockerfile (first build)
 echo "[Python] Building good Dockerfile..."
-time docker build -t py-good -f Dockerfile.good .
+/usr/bin/time -p docker build -t py-good -f Dockerfile.good .
 echo "Image size py-good:"
 docker images py-good --format "{{.Size}}"
 
 # Modify code and rebuild good Dockerfile
 echo "[Python] Modifying code and rebuilding good Dockerfile..."
 sed -i.bak 's/msg/message/g' spaceship/routers/api.py
-time docker build -t py-good-mod -f Dockerfile.good .
+/usr/bin/time -p docker build -t py-good-mod -f Dockerfile.good .
 echo "Image size py-good-mod:"
 docker images py-good-mod --format "{{.Size}}"
 # Revert
@@ -36,7 +36,7 @@ mv spaceship/routers/api.py.bak spaceship/routers/api.py
 
 # 4. Alpine Dockerfile
 echo "[Python] Building Alpine Dockerfile..."
-time docker build -t py-alpine -f Dockerfile.alpine .
+/usr/bin/time -p docker build -t py-alpine -f Dockerfile.alpine .
 echo "Image size py-alpine:"
 docker images py-alpine --format "{{.Size}}"
 
@@ -59,12 +59,12 @@ def matrix() -> dict:
 EOF
 
 echo "[Python] Building Debian Numpy..."
-time docker build -t py-numpy-debian -f Dockerfile.good .
+/usr/bin/time -p docker build -t py-numpy-debian -f Dockerfile.good .
 echo "Image size py-numpy-debian:"
 docker images py-numpy-debian --format "{{.Size}}"
 
 echo "[Python] Building Alpine Numpy..."
-time docker build -t py-numpy-alpine -f Dockerfile.alpine .
+/usr/bin/time -p docker build -t py-numpy-alpine -f Dockerfile.alpine .
 echo "Image size py-numpy-alpine:"
 docker images py-numpy-alpine --format "{{.Size}}"
 

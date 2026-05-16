@@ -19,8 +19,8 @@ CMD ["./main"]
 ### Measurements
 | Metric | Value |
 | --- | --- |
-| Build Time | 14.2s |
-| Image Size | 820MB |
+| Build Time | 0.057s (cached) |
+| Image Size | 1.33GB |
 
 ### Analysis
 The resulting image is massive. It contains the entire `golang` toolchain, operating system tools, compiler, source code, and intermediate build artifacts. This is highly insecure (larger attack surface) and inefficient for deployment. All these files are unnecessary for simply running the compiled binary.
@@ -62,8 +62,8 @@ CMD ["./main"]
 ### Measurements
 | Metric | Value |
 | --- | --- |
-| Build Time | 15.1s |
-| Image Size | 8.5MB |
+| Build Time | 0.075s (cached) |
+| Image Size | 16MB |
 
 ### Analysis
 The size is incredibly small, containing literally only what is needed to run the app. 
@@ -96,8 +96,8 @@ CMD ["./main"]
 ### Measurements
 | Metric | Value |
 | --- | --- |
-| Build Time | 15.3s |
-| Image Size | 33MB |
+| Build Time | 0.168s (cached) |
+| Image Size | 59.5MB |
 
 ### Analysis
 Distroless images contain the bare minimum runtime dependencies (like `glibc`, SSL certificates, timezone data) but still lack package managers and shells. 

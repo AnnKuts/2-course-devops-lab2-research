@@ -29,8 +29,8 @@ docker build -t py-bad-mod -f Dockerfile.bad .
 ### Measurements
 | Metric | Initial Build | Rebuild (Code Changed) |
 | --- | --- | --- |
-| Build Time | 23.4s | 22.8s |
-| Image Size | 345MB | 345MB |
+| Build Time | 24.47s | 19.17s |
+| Image Size | 1.56GB | 1.56GB |
 *(Note: Replace placeholders by running the commands above on an active Docker daemon)*
 
 ### Analysis
@@ -68,8 +68,8 @@ docker build -t py-good-mod -f Dockerfile.good .
 ### Measurements
 | Metric | Initial Build | Rebuild (Code Changed) |
 | --- | --- | --- |
-| Build Time | 23.1s | 1.2s |
-| Image Size | 345MB | 345MB |
+| Build Time | 2.49s | 1.79s |
+| Image Size | 1.56GB | 1.56GB |
 
 ### Analysis
 By copying only the `requirements/` directory first and installing dependencies, we cache the heavy `pip install` step. When source code changes, only the subsequent `COPY . /app` layer is invalidated. Rebuilding takes mere seconds since dependencies are not reinstalled.
@@ -96,8 +96,8 @@ CMD ["uvicorn", "spaceship.main:app", "--host=0.0.0.0", "--port=8080"]
 ### Measurements
 | Metric | Alpine Build | Debian Build (py-good) |
 | --- | --- | --- |
-| Build Time | 18.5s | 23.1s |
-| Image Size | 75MB | 345MB |
+| Build Time | 1.03s | 2.49s |
+| Image Size | 162MB | 1.56GB |
 
 ### Analysis
 The Alpine-based image is significantly smaller because Alpine Linux is a minimal distribution. For pure Python applications, Alpine is a great choice to reduce image size and attack surface.
@@ -121,8 +121,8 @@ docker build -t py-numpy-alpine -f Dockerfile.alpine .
 ### Measurements
 | Metric | Debian with Numpy | Alpine with Numpy |
 | --- | --- | --- |
-| Build Time | 26.3s | 42.1s |
-| Image Size | 395MB | 195MB |
+| Build Time | 23.96s | 23.68s |
+| Image Size | 1.68GB | 292MB |
 
 ### Analysis
 **Debian:** `pip` downloads a pre-compiled `manylinux` wheel for `numpy`. Installation is fast.

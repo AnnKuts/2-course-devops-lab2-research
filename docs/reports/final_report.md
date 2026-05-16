@@ -36,14 +36,14 @@
 
 | Experiment | Build time | Rebuild time | Image size |
 |---|---:|---:|---:|
-| Python bad | 23.4s | 22.8s | 345MB |
-| Python optimized | 23.1s | 1.2s | 345MB |
-| Python Alpine | 18.5s | 1.5s | 75MB |
-| Python Debian + numpy | 26.3s | N/A | 395MB |
-| Python Alpine + numpy | 42.1s | N/A | 195MB |
-| Golang basic | 14.2s | N/A | 820MB |
-| Golang scratch | 15.1s | N/A | 8.5MB |
-| Golang distroless | 15.3s | N/A | 33MB |
+| Python bad | 24.47s | 19.17s | 1.56GB |
+| Python optimized | 2.49s (cached) | 1.79s | 1.56GB |
+| Python Alpine | 1.03s (cached) | N/A | 162MB |
+| Python Debian + numpy | 23.96s | N/A | 1.68GB |
+| Python Alpine + numpy | 23.68s | N/A | 292MB |
+| Golang basic | 0.057s (cached) | N/A | 1.33GB |
+| Golang scratch | 0.075s (cached) | N/A | 16MB |
+| Golang distroless | 0.168s (cached)| N/A | 59.5MB |
 
 ### 2.1. Python застосунок (Layer Caching & Base Images)
 - **Layer Caching:** Розділення інсталяції залежностей (`COPY requirements/` + `RUN pip install`) та копіювання коду (`COPY . /app`) критично важливе. При зміні коду час збірки зменшився з ~20 секунд до ~1 секунди. [Деталі в python_experiments.md](./python_experiments.md)
